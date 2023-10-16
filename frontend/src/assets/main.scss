@@ -1,0 +1,71 @@
+@import "./base.css";
+@import "./primevue.scss";
+@import "./variables.scss";
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a,
+a:visited {
+  color: $app-link-text;
+  text-decoration: underline;
+  &:hover {
+    color: $app-link-text-hover;
+  }
+}
+
+.p-button,
+.p-inputswitch-slider {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+// underline button text
+.p-button:hover {
+  text-decoration: underline;
+}
+// don't underline button icons
+.p-button .p-button-icon:before {
+  text-decoration: none;
+  display: inline-block;
+}
+
+// wrap text
+.wrap-block {
+  display: inline-block;
+  overflow-wrap: break-word;
+  width: 100%;
+}
+
+td .wrap-block {
+  width: inherit;
+}
+
+.gov-footer {
+  background-color: #003366 !important;
+  border-top: 2px solid #fcba19;
+  flex-shrink: 0;
+  min-height: 2.5rem;
+  min-width: 100%;
+  padding-bottom: 0;
+  padding-top: 0;
+
+  a {
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .button > span {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
