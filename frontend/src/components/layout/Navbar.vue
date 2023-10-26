@@ -9,24 +9,18 @@ const { getIsAuthenticated } = storeToRefs(useAuthStore());
 </script>
 
 <template>
-  <nav
-    class="navigation-main"
-  >
+  <nav class="navigation-main">
     <Toolbar>
       <template #start>
         <ol class="list-none m-0 p-0 flex flex-row align-items-center font-semibold">
           <li class="mr-2">
-            <router-link :to="{ name: RouteNames.HOME }">
-              Home
-            </router-link>
+            <router-link :to="{ name: RouteNames.HOME }">Home</router-link>
           </li>
           <li
             v-if="getIsAuthenticated"
             class="mr-2"
           >
-            <router-link :to="{ name: RouteNames.DEVELOPER }">
-              Developer
-            </router-link>
+            <router-link :to="{ name: RouteNames.SECURED }">Secured</router-link>
           </li>
         </ol>
       </template>

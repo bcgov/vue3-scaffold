@@ -17,15 +17,13 @@ product_information:
     - Manage Object Storage Objects (Share publicly)
   ministry:
     - Water, Land and Resource Stewardship
-  product_acronym: BCBox
+  product_acronym: Vue3Scaffold
   product_description: >-
-    BCBox is a hosted user interface that serves as a common front-end consumer
+    Vue 3 Scaffold is a hosted user interface that serves as a common front-end consumer
     of the hosted COMS API and can be used as a simple dropbox to allow file
     sharing and permission management using S3.
-  product_name: BCBox
+  product_name: Vue 3 Scaffold
   product_status: maturing
-  product_urls:
-    - https://bcbox.nrs.gov.bc.ca
   program_area: >-
     Natural Resource Information and Digital Services - Development and Digital
     Services

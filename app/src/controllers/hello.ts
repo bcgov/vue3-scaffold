@@ -7,8 +7,7 @@ const controller = {
     try {
       const response: unknown = await helloService.getHello();
       res.status(200).send(response);
-    }
-    catch(e: unknown) {
+    } catch (e: unknown) {
       next(e);
     }
   }

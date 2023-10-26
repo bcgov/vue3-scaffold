@@ -9,17 +9,16 @@ import type { Ref } from 'vue';
 import type { IdentityProvider } from '@/types';
 
 export type AuthStoreState = {
-  accessToken: Ref<string | undefined>,
-  expiresAt: Ref<number | undefined>,
-  identityId: Ref<string | undefined>,
-  idToken: Ref<string | undefined>,
-  isAuthenticated: Ref<boolean>,
-  profile: Ref<IdTokenClaims | undefined>,
-  refreshToken: Ref<string | undefined>,
-  scope: Ref<string | undefined>,
-  user: Ref<User | null>,
-  userId: Ref<string | undefined>
-}
+  accessToken: Ref<string | undefined>;
+  expiresAt: Ref<number | undefined>;
+  identityId: Ref<string | undefined>;
+  idToken: Ref<string | undefined>;
+  isAuthenticated: Ref<boolean>;
+  profile: Ref<IdTokenClaims | undefined>;
+  refreshToken: Ref<string | undefined>;
+  scope: Ref<string | undefined>;
+  user: Ref<User | null>;
+};
 
 export const useAuthStore = defineStore('auth', () => {
   const configService = new ConfigService();
@@ -36,8 +35,7 @@ export const useAuthStore = defineStore('auth', () => {
     profile: ref(undefined),
     refreshToken: ref(undefined),
     scope: ref(undefined),
-    user: ref(null),
-    userId: ref(undefined)
+    user: ref(null)
   };
 
   // Getters
@@ -50,8 +48,7 @@ export const useAuthStore = defineStore('auth', () => {
     getProfile: computed(() => state.profile.value),
     getRefreshToken: computed(() => state.refreshToken.value),
     getScope: computed(() => state.scope.value),
-    getUser: computed(() => state.user.value),
-    getUserId: computed(() => state.userId.value)
+    getUser: computed(() => state.user.value)
   };
 
   // Actions
@@ -70,10 +67,9 @@ export const useAuthStore = defineStore('auth', () => {
     const user = await authService.getUser();
     const profile = user?.profile;
     const isAuthenticated = !!user && !user.expired;
-    const identityId = configService.getConfig().idpList
-      .map((provider: IdentityProvider) => profile
-        ? profile[provider.identityKey]
-        : undefined)
+    const identityId = configService
+      .getConfig()
+      .idpList.map((provider: IdentityProvider) => (profile ? profile[provider.identityKey] : undefined))
       .filter((item?: string) => item)[0];
 
     state.accessToken.value = user?.access_token;
@@ -85,9 +81,6 @@ export const useAuthStore = defineStore('auth', () => {
     state.refreshToken.value = user?.refresh_token;
     state.scope.value = user?.scope;
     state.user.value = user;
-    state.userId.value = (isAuthenticated && identityId)
-      ? '64595a82-ec73-4708-a21d-9c64f0a22f7e' // Random GUID. Do a user lookup here!
-      : undefined;
   }
 
   async function init() {

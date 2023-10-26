@@ -29,10 +29,12 @@ import { Header, Footer } from '@/components/layout';
   align-items: flex-start;
   min-height: 100vh;
   width: 100%;
+
   .layout-head {
     flex: 0;
     width: 100%;
   }
+
   .layout-container {
     flex: 1;
     padding-top: 20px;
@@ -40,6 +42,7 @@ import { Header, Footer } from '@/components/layout';
     padding-right: 100px;
     width: 100%;
   }
+
   .layout-footer {
     width: 100%;
   }

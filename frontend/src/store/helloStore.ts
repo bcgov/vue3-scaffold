@@ -7,16 +7,16 @@ import { useAppStore } from '@/store';
 import type { Ref } from 'vue';
 
 export type HelloStoreState = {
-  hello: Ref<any | null>
-}
+  hello: Ref<any | null>;
+};
 
 export const useHelloStore = defineStore('hello', () => {
   // Store
   const appStore = useAppStore();
-    
+
   // State
   const state: HelloStoreState = {
-    hello: ref(null),
+    hello: ref(null)
   };
 
   // Getters
@@ -29,8 +29,7 @@ export const useHelloStore = defineStore('hello', () => {
     try {
       appStore.beginIndeterminateLoading();
       state.hello.value = (await helloService.helloWorld()).data;
-    }
-    finally {
+    } finally {
       appStore.endIndeterminateLoading();
     }
   }
@@ -43,7 +42,7 @@ export const useHelloStore = defineStore('hello', () => {
     ...getters,
 
     // Actions
-    helloWorld,
+    helloWorld
   };
 });
 

@@ -1,20 +1,11 @@
-// This script attempts to gracefully rebuild and update bcbox-frontend if necessary
+// This script attempts to gracefully rebuild and update vue3-scaffold-frontend if necessary
 /* eslint-disable no-console */
-import {
-  existsSync,
-  lstatSync,
-  mkdirSync,
-  readdirSync,
-  readFileSync,
-  rmSync,
-  statSync,
-  writeFileSync
-} from 'fs';
+import { existsSync, lstatSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'fs';
 import { basename, join } from 'path';
 
 const FRONTEND_DIR = '../frontend';
 const DIST_DIR = 'dist';
-const TITLE = 'bcbox-frontend';
+const TITLE = 'vue3-scaffold-frontend';
 
 try {
   const args = process.argv.slice(2);
@@ -56,7 +47,7 @@ try {
 
 /**
  * @function buildComponents
- * @description Rebuild `bcbox-frontend` library
+ * @description Rebuild `vue3-scaffold-frontend` library
  */
 function buildComponents() {
   if (!existsSync(`${FRONTEND_DIR}/node_modules`)) {
@@ -70,7 +61,7 @@ function buildComponents() {
 
 /**
  * @function cleanComponents
- * @description Clean `bcbox-frontend` library directory
+ * @description Clean `vue3-scaffold-frontend` library directory
  */
 function cleanComponents() {
   console.log(`Cleaning ${TITLE}...`);
@@ -80,7 +71,7 @@ function cleanComponents() {
 
 /**
  * @function deployComponents
- * @description Redeploy `bcbox-frontend` library
+ * @description Redeploy `bcvue3-scaffoldbox-frontend` library
  */
 function deployComponents() {
   console.log(`Redeploying ${TITLE}...`);
@@ -155,7 +146,7 @@ export function copyDirRecursiveSync(source: string, target: string) {
   // Copy
   if (lstatSync(source).isDirectory()) {
     files = readdirSync(source);
-    files.forEach(file => {
+    files.forEach((file) => {
       const curSource = join(source, file);
       if (lstatSync(curSource).isDirectory()) {
         copyDirRecursiveSync(curSource, targetFolder);

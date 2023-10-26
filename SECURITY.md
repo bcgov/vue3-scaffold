@@ -1,6 +1,6 @@
 # Security Policies and Procedures
 
-This document outlines security procedures and general policies for the BCBox
+This document outlines security procedures and general policies for the Vue 3 Scaffold
 project.
 
 - [Supported Versions](#supported-versions)
@@ -10,17 +10,17 @@ project.
 
 ## Supported Versions
 
-At this time, only the latest version of BCBox is supported.
+At this time, only the latest version of Vue 3 Scaffold is supported.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.1.0   | :white_check_mark: |
-| < 0.1.x | :x:                |
+| 0.4.0   | :white_check_mark: |
+| < 0.4.x | :x:                |
 
 ## Reporting a Bug
 
-The `CSS` team and community take all security bugs in `BCBox` seriously.
-Thank you for improving the security of `BCBox`. We appreciate your efforts and
+The `CSS` team and community take all security bugs in `Vue 3 Scaffold` seriously.
+Thank you for improving the security of `Vue 3 Scaffold`. We appreciate your efforts and
 responsible disclosure and will make every effort to acknowledge your
 contributions.
 

@@ -12,9 +12,9 @@ import type { RouteRecordRaw } from 'vue-router';
  * @param {object} route The route object
  * @returns {object} a Vue props object
  */
-function createProps(route: { query: any; params: any; }): object {
-  return { ...route.query, ...route.params };
-}
+// function createProps(route: { query: any; params: any; }): object {
+//   return { ...route.query, ...route.params };
+// }
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,6 +22,12 @@ const routes: Array<RouteRecordRaw> = [
     name: RouteNames.HOME,
     component: () => import('../views/HomeView.vue'),
     meta: { title: 'Home' }
+  },
+  {
+    path: '/secured',
+    name: RouteNames.SECURED,
+    component: () => import('@/views/SecuredView.vue'),
+    meta: { requiresAuth: true, title: 'Secured' }
   },
   {
     path: '/developer',
@@ -54,7 +60,7 @@ const routes: Array<RouteRecordRaw> = [
         name: RouteNames.LOGOUT,
         component: () => import('@/views/oidc/OidcLogoutView.vue'),
         meta: { title: 'Logging out...' }
-      },
+      }
     ]
   },
   {
@@ -85,7 +91,7 @@ export default function getRouter() {
     // Backend Redirection Handler
     if (to.query?.r) {
       router.replace({
-        path: (to.query.r) ? to.query.r.toString() : to.path,
+        path: to.query.r ? to.query.r.toString() : to.path,
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
         query: (({ r, ...q }) => q)(to.query)
       });

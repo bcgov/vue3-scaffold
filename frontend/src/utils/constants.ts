@@ -12,7 +12,8 @@ export const RouteNames = Object.freeze({
   FORBIDDEN: 'forbidden',
   HOME: 'home',
   LOGIN: 'login',
-  LOGOUT: 'logout'
+  LOGOUT: 'logout',
+  SECURED: 'secured'
 });
 
 /**

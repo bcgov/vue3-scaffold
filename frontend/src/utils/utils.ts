@@ -8,9 +8,7 @@ import { DELIMITER } from '@/utils/constants';
  * @returns {object} Object containing the non-matching key/value pairs in the source object
  */
 export function differential(source: any, comparer: any): any {
-  return Object.fromEntries(Object.entries(source)
-    .filter(([key, value]) => comparer[key] !== value)
-  );
+  return Object.fromEntries(Object.entries(source).filter(([key, value]) => comparer[key] !== value));
 }
 
 /**
@@ -31,14 +29,14 @@ export function isDebugMode(): boolean {
 export function joinPath(...items: Array<string>): string {
   if (items && items.length) {
     const parts: Array<string> = [];
-    items.forEach(p => {
-      if (p) p.split(DELIMITER).forEach(x => {
-        if (x && x.trim().length) parts.push(x);
-      });
+    items.forEach((p) => {
+      if (p)
+        p.split(DELIMITER).forEach((x) => {
+          if (x && x.trim().length) parts.push(x);
+        });
     });
     return parts.join(DELIMITER);
-  }
-  else return '';
+  } else return '';
 }
 
 /**
@@ -74,7 +72,7 @@ export function setDispositionHeader(filename: string) {
   const dispositionHeader = `attachment; filename="${filename}"`;
   const encodedFilename = encodeURIComponent(filename).replace(
     /[!'()*]/g,
-    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`,
+    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
   );
 
   if (filename === encodedFilename) {

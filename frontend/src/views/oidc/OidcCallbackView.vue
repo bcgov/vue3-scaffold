@@ -29,6 +29,7 @@ h2 {
   margin-top: 10rem;
   text-align: center;
 }
+
 .p-progress-spinner {
   display: flex;
   margin-top: 4rem;

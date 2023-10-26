@@ -1,11 +1,14 @@
 import compression from 'compression';
 import config from 'config';
+import cors from 'cors';
 import express from 'express';
+import helmet from 'helmet';
 import { join } from 'path';
 // @ts-expect-error api-problem lacks a defined interface; code still works fine
 import Problem from 'api-problem';
 import querystring from 'querystring';
 
+import { DEFAULTCORS } from './src/components/constants';
 import { getLogger, httpLogger } from './src/components/log';
 import { getGitRevision, readIdpList } from './src/components/utils';
 import v1Router from './src/routes/v1';
@@ -23,8 +26,10 @@ const state = {
 const appRouter = express.Router();
 const app = express();
 app.use(compression());
+app.use(cors(DEFAULTCORS));
 app.use(express.json({ limit: config.get('server.bodyLimit') }));
 app.use(express.urlencoded({ extended: true }));
+app.use(helmet());
 
 // Skip if running tests
 if (process.env.NODE_ENV !== 'test') {
@@ -89,10 +94,10 @@ app.use((err: Problem, _req: Request, res: Response, _next: () => void): void =>
   }
 
   if (err instanceof Problem) {
-    err.send(res, null);
+    err.send(res, undefined);
   } else {
     new Problem(500, 'Server Error', {
-      detail: (err.message) ? err.message : err
+      detail: err.message ? err.message : err
     }).send(res);
   }
 });
