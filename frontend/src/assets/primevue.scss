@@ -71,12 +71,6 @@
       border-color: $app-primary;
       color: $app-outline-on-primary !important;
     }
-
-    &:hover {
-      border-color: $app-primary !important;
-      color: $app-outline-on-primary !important;
-      background-color: $app-primary !important;
-    }
   }
 }
 
@@ -108,4 +102,20 @@
       }
     }
   }
+}
+
+.p-tag {
+  background-color: $app-primary;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  line-height: 1.2em;
 }

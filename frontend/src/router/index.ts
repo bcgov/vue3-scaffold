@@ -24,6 +24,12 @@ const routes: Array<RouteRecordRaw> = [
     meta: { title: 'Home' }
   },
   {
+    path: '/stylings',
+    name: RouteNames.STYLINGS,
+    component: () => import('@/views/StylingsView.vue'),
+    meta: { requiresAuth: false, title: 'Stylings' }
+  },
+  {
     path: '/secured',
     name: RouteNames.SECURED,
     component: () => import('@/views/SecuredView.vue'),

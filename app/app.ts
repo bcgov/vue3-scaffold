@@ -70,7 +70,9 @@ appRouter.get('/config', (_req: Request, res: Response, next: (err: unknown) => 
   try {
     res.status(200).json({
       ...config.get('frontend'),
-      idpList: readIdpList()
+      gitRev: state.gitRev,
+      idpList: readIdpList(),
+      version: process.env.npm_package_version
     });
   } catch (err) {
     next(err);

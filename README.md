@@ -7,18 +7,21 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/bfaf1cdb7fe730c10840/maintainability)](https://codeclimate.com/github/bcgov/vue3-scaffold/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bfaf1cdb7fe730c10840/test_coverage)](https://codeclimate.com/github/bcgov/vue3-scaffold/test_coverage)
 
-A frontend UI for managing access control to S3 Objects
+A clean Vue 3 frontend & backend scaffold example
 
 To learn more about the **Common Services** available visit the [Common Services Showcase](https://bcgov.github.io/common-service-showcase/) page.
 
 ## Directory Structure
 
 ```txt
+.github/                   - PR, Issue templates
 .vscode/                   - VSCode environment configurations
 app/                       - Application Root
+├── config/                - configuration exposed as environment variables
 ├── src/                   - Node.js web application
 │   └── components/        - Components Layer
 |   └── controllers/       - Controller Layer
+|   └── middleware/        - Middleware Layer
 |   └── routes/            - Routes Layer
 |   └── services/          - Services Layer
 │   ├── types/             - Typescript type definitions
@@ -37,7 +40,6 @@ frontend/                  - Frontend Root
 │   ├── utils/             - Utility components
 │   └── views/             - View Layer
 └── tests/                 - Node.js web application tests
-bcgovpubcode.yaml          - BCGov Public Code manifest
 CODE-OF-CONDUCT.md         - Code of Conduct
 COMPLIANCE.yaml            - BCGov PIA/STRA compliance status
 CONTRIBUTING.md            - Contributing Guidelines

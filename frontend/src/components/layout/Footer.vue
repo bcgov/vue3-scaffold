@@ -72,7 +72,7 @@ const { getConfig } = storeToRefs(useConfigStore());
       v-if="getConfig"
       class="flex align-items-center justify-content-center text-white mr-3"
     >
-      v{{ getConfig.version }}-{{ getConfig.gitRev?.substring(0, 8) }}
+      v{{ getConfig.version }}{{ getConfig.gitRev ? '-' + getConfig.gitRev.substring(0, 8) : '' }}
     </div>
   </div>
 </template>
