@@ -4,8 +4,8 @@
 [![Lifecycle:Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
 
 ![Tests](https://github.com/bcgov/vue3-scaffold/workflows/Tests/badge.svg)
-[![Maintainability](https://api.codeclimate.com/v1/badges/bfaf1cdb7fe730c10840/maintainability)](https://codeclimate.com/github/bcgov/vue3-scaffold/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/bfaf1cdb7fe730c10840/test_coverage)](https://codeclimate.com/github/bcgov/vue3-scaffold/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c8851505a24845123966/maintainability)](https://codeclimate.com/github/bcgov/vue3-scaffold/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c8851505a24845123966/test_coverage)](https://codeclimate.com/github/bcgov/vue3-scaffold/test_coverage)
 
 A clean Vue 3 frontend & backend scaffold example
 
