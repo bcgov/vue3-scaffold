@@ -19,12 +19,12 @@ To learn more about the **Common Services** available visit the [Common Services
 app/                       - Application Root
 ├── config/                - configuration exposed as environment variables
 ├── src/                   - Node.js web application
-│   └── components/        - Components Layer
-|   └── controllers/       - Controller Layer
-|   └── middleware/        - Middleware Layer
-|   └── routes/            - Routes Layer
-|   └── services/          - Services Layer
-│   ├── types/             - Typescript type definitions
+│   ├── components/        - Components Layer
+│   ├── controllers/       - Controller Layer
+│   ├── middleware/        - Middleware Layer
+│   ├── routes/            - Routes Layer
+│   ├── services/          - Services Layer
+│   └── types/             - Typescript type definitions
 └── tests/                 - Node.js web application tests
 frontend/                  - Frontend Root
 ├── src/                   - Node.js web application
