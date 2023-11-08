@@ -71,7 +71,7 @@ function cleanComponents() {
 
 /**
  * @function deployComponents
- * @description Redeploy `bcvue3-scaffoldbox-frontend` library
+ * @description Redeploy `vue3-scaffold-frontend` library
  */
 function deployComponents() {
   console.log(`Redeploying ${TITLE}...`);
