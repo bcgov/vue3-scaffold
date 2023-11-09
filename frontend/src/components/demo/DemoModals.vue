@@ -75,18 +75,19 @@ const onModalSubmit = (values: any) => {
     v-model:visible="modalOpen"
     :draggable="false"
     :modal="true"
-    class="app-info-dialog permissions-modal"
+    class="app-info-dialog w-6"
   >
     <!-- eslint-enable vue/no-v-model-argument -->
     <template #header>
       <font-awesome-icon
         icon="fa-solid fa-circle-info"
         fixed-width
+        class="mr-2"
       />
       <span class="p-dialog-title">Modal header</span>
     </template>
 
-    <h3 class="pt-3 pb-3">Modal body</h3>
+    <h3>Modal body</h3>
     <Form
       :initial-values="initialDialogValues"
       :validation-schema="dialogSchema"
@@ -107,13 +108,13 @@ const onModalSubmit = (values: any) => {
         autofocus
       />
       <Button
-        class="mt-5"
+        class="mr-2"
         label="Save"
         type="submit"
         icon="pi pi-check"
       />
       <Button
-        class="p-button-text mt-2"
+        class="p-button-outlined mr-2"
         label="Cancel"
         icon="pi pi-times"
         @click="modalOpen = false"

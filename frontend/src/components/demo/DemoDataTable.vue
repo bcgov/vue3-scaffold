@@ -88,16 +88,11 @@ const filters = ref({
             <InputSwitch v-model="data.toggle" />
           </template>
         </Column>
-        <Column
-          header="Actions"
-          header-style="width: 250px"
-          header-class="header-right"
-          body-class="content-right action-buttons"
-        >
+        <Column header="Actions">
           <template #body="{ data }">
             <Button
-              class="p-button-lg p-button-rounded p-button-text"
-              aria-label="Synchronize bucket"
+              class="p-button-lg p-button-rounded p-button-text p-0"
+              aria-label="help text"
               @click="
                 () => {
                   showSidePanel = true;
@@ -117,26 +112,20 @@ const filters = ref({
     />
     <div
       v-if="showSidePanel && panelObject"
-      class="flex-shrink-0"
-      style="max-width: 25%; min-width: 25%"
+      class="flex-shrink-0 w-4 side-panel"
     >
-      <div class="flex justify-content-start">
-        <div class="flex col align-items-center heading">
-          <font-awesome-icon
-            icon="fa-solid fa-circle-info"
-            style="font-size: 2rem"
-          />
-          <h1>Side panel</h1>
-        </div>
-        <div>
-          <Button
-            class="black"
-            icon="pi pi-times"
-            text
-            rounded
-            @click="showSidePanel = false"
-          />
-        </div>
+      <div class="flex pl-2">
+        <font-awesome-icon
+          icon="fa-solid fa-circle-info"
+          style="font-size: 2rem"
+        />
+        <h2 class="mt-0 ml-3 flex-grow-1">Side panel</h2>
+        <Button
+          icon="pi pi-times"
+          text
+          rounded
+          @click="showSidePanel = false"
+        />
       </div>
       <div class="pl-2 sidebar">
         <GridRow
@@ -151,16 +140,3 @@ const filters = ref({
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-h1 {
-  padding-left: 1rem;
-}
-
-.black {
-  color: black;
-}
-.heading svg {
-  color: $app-primary;
-}
-</style>
