@@ -4,7 +4,7 @@ import { Button } from '@/lib/primevue';
 
 <template>
   <h3 class="pt-5 font-bold">Buttons</h3>
-  <h4 class="pt-2">No icons</h4>
+  <h4>No icons</h4>
   <Button class="mr-1">Primary button</Button>
   <Button class="p-button-outlined mr-1">Secondary button</Button>
   <Button
