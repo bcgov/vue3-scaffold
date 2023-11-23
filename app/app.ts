@@ -9,6 +9,7 @@ import Problem from 'api-problem';
 import querystring from 'querystring';
 
 import { DEFAULTCORS } from './src/components/constants';
+import { name as appName, version as appVersion } from './package.json';
 import { getLogger, httpLogger } from './src/components/log';
 import { getGitRevision, readIdpList } from './src/components/utils';
 import v1Router from './src/routes/v1';
@@ -55,9 +56,9 @@ appRouter.get('/api', (_req: Request, res: Response): void => {
     res.status(200).json({
       app: {
         gitRev: state.gitRev,
-        name: process.env.npm_package_name,
+        name: appName,
         nodeVersion: process.version,
-        version: process.env.npm_package_version
+        version: appVersion
       },
       endpoints: ['/api/v1'],
       versions: [1]
@@ -72,7 +73,7 @@ appRouter.get('/config', (_req: Request, res: Response, next: (err: unknown) => 
       ...config.get('frontend'),
       gitRev: state.gitRev,
       idpList: readIdpList(),
-      version: process.env.npm_package_version
+      version: appVersion
     });
   } catch (err) {
     next(err);
